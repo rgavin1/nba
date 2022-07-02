@@ -1,0 +1,83 @@
+from sqlalchemy import Column, Integer, String
+from .database import Base
+
+class Player(Base):
+    __tablename__ = "players"
+
+    id = Column(Integer, primary_key=True, index=True)
+    player = Column(String, nullable=False)
+    height = Column(String, nullable=True)
+    weight = Column(String, nullable=True)
+    collage = Column(String, nullable=True)
+    born = Column(String, nullable=True)
+    birth_city = Column(String, nullable=True)
+    birth_state = Column(String, nullable=True)
+
+class PlayerData(Base):
+    __tablename__ = "players_data"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, nullable=False)
+    year_start = Column(String, nullable=True)
+    year_end = Column(String, nullable=True)
+    position = Column(String, nullable=True)
+    height = Column(String, nullable=True)
+    weight = Column(String, nullable=True)
+    birth_date = Column(String, nullable=True)
+    college = Column(String, nullable=True)
+
+class SeasonStat(Base):
+    __tablename__ = "season_stats"
+
+    id = Column(Integer, primary_key=True, index=True)
+    season_year = Column(String, nullable=False)
+    player_name = Column(String, nullable=False)
+    position = Column(String, nullable=False)
+    age = Column(String, nullable=False)
+    team = Column(String, nullable=False)
+    games = Column(String, nullable=False)
+    games_started = Column(String, nullable=False)
+    minutes_played = Column(String, nullable=False)
+    player_efficiency_rating = Column(String, nullable=False)
+    true_shooting_percentage = Column(String, nullable=False)
+    three_point_attempt_rate = Column(String, nullable=False)
+    free_throw_rate = Column(String, nullable=False)
+    offensive_rebound_percentage = Column(String, nullable=False)
+    defensive_rebound_percentage = Column(String, nullable=False)
+    total_rebound_percentage = Column(String, nullable=False)
+    assist_percentage = Column(String, nullable=False)
+    steal_percentage = Column(String, nullable=False)
+    block_percentage = Column(String, nullable=False)
+    turnover_percentage = Column(String, nullable=False)
+    usage_percentage = Column(String, nullable=False)
+    offensive_win_shares = Column(String, nullable=False)
+    defensive_win_shares = Column(String, nullable=False)
+    win_shares = Column(String, nullable=False)
+    win_shares_per_48 = Column(String, nullable=False)
+    offensive_box_plus_minus = Column(String, nullable=False)
+    defensive_box_plus_minus = Column(String, nullable=False)
+    box_plus_minus = Column(String, nullable=False)
+    value_over_replacement = Column(String, nullable=False)
+    field_goal = Column(String, nullable=False)
+    field_goal_attempt = Column(String, nullable=False)
+    field_goal_per = Column(String, nullable=False)
+    three_point_field_goals = Column(String, nullable=False)
+    three_point_field_attempts = Column(String, nullable=False)
+    three_point_field_percentage = Column(String, nullable=False)
+    two_point = Column(String, nullable=False)
+    two_point_attempts = Column(String, nullable=False)
+    two_point_percentage = Column(String, nullable=False)
+    effective_field_goal_percentage = Column(String, nullable=False)
+    free_throws = Column(String, nullable=False)
+    free_throw_attempts = Column(String, nullable=False)
+    free_throw_percentage = Column(String, nullable=False)
+    offensive_rebounds = Column(String, nullable=False)
+    defensive_rebounds = Column(String, nullable=False)
+    total_rebounds = Column(String, nullable=False)
+    assists = Column(String, nullable=False)
+    steals = Column(String, nullable=False)
+    blocks = Column(String, nullable=False)
+    turnovers = Column(String, nullable=False)
+    personal_fouls = Column(String, nullable=False)
+    points = Column(String, nullable=False)
+
