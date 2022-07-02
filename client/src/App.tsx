@@ -3,8 +3,9 @@ import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 
 import './App.css';
+import { Home, Player } from './pages'
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <nav>
@@ -14,10 +15,10 @@ function App() {
         <Link to="/players/data">Players Data</Link>
       </nav>
       <Routes>
-        <Route path="/" element={<div><h1>HOME</h1></div>} />
+        <Route path="/" element={<Home />} />
         <Route path="/search" element={<div><h1>Search</h1></div>} />
         <Route path="/players" element={<div><h1>Player</h1></div>} />
-        <Route path="/players/data" element={<div><h1>Player Data</h1></div>} />
+        <Route path="/players/data" element={<Player />} />
       </Routes>
     </div>
   );
