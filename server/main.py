@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from . import models, database
-from .routes import players, players_data
+from .routes import players, players_data, teams_data, season_stats
 
 models.Base.metadata.create_all(bind=database.engine)
 
@@ -17,3 +17,5 @@ app.add_middleware(
 
 app.include_router(players.router)
 app.include_router(players_data.router)
+app.include_router(teams_data.router)
+app.include_router(season_stats.router)

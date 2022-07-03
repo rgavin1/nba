@@ -21,7 +21,7 @@ def getPlayerInformationById(id: str, db: Session = Depends(get_db)):
     if not player:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Player with the id: {id} not found")
 
-    return { "data": player }
+    return player
 
 @router.get("/name/{name}")
 def getPlayersInformationByName(name: str, db: Session = Depends(get_db)):
@@ -30,4 +30,4 @@ def getPlayersInformationByName(name: str, db: Session = Depends(get_db)):
     if not player:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Player with the name: {name} not found")
 
-    return { "data": player }
+    return player
